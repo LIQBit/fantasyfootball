@@ -1,0 +1,30 @@
+body {
+    background-color: aqua;
+}
+
+nav {
+    color: red;
+}
+
+.card {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.container {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+
+#player_list {
+    list-style-type: none;
+}
+
+a {
+    font-size: large;
+}
+
+.posbutton {
+    width: 100px;
+}

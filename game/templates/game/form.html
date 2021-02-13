@@ -1,0 +1,185 @@
+{% extends "game/layout.html" %}
+{% load static %}
+
+{% block body %}
+<div class="sticky-top" style="position: sticky; margin-left: auto; margin-right: auto; width: 80%;">
+    
+
+        {% if messages %}
+            {% for msg in messages %}
+                <div class="alert alert-{{msg.level_tag}}" role="alert"> {{msg.message}}</div>
+            {% endfor %}
+
+        {% endif %}
+
+
+
+
+        <div class="input-group mb-3" style="margin-top: 20px;">
+            <form action="" method="POST" name="quarterback" style="margin-left: auto; margin-right: auto;width: 600px;">
+                <div class="input-group-append" >
+                    {% csrf_token %}
+                            
+                    {{ QBform }}
+                <button class="btn btn-md btn-outline-default m-0 px-3 py-2 z-depth-0 waves-effect" type="submit" value="Submit" name="quarterback" style="width: 100px;">Submit</button>
+            </form>
+        </div>
+
+        <div class="input-group mb-3" style="margin-top: 20px;">
+            <form action="" method="POST" name="runningback" style="margin-left: auto; margin-right: auto;width: 600px;">
+                <div class="input-group-append" >
+                    {% csrf_token %}
+                            
+                    {{ RBform }}
+                <button class="btn btn-md btn-outline-default m-0 px-3 py-2 z-depth-0 waves-effect" type="submit" value="Submit" name="runningback" style="width: 100px;">Submit</button>
+            </form>
+        </div>
+
+        <div class="input-group mb-3" style="margin-top: 20px;">
+            <form action="" method="POST" name="widereceiver" style="margin-left: auto; margin-right: auto;width: 600px;">
+                <div class="input-group-append" >
+                    {% csrf_token %}
+                            
+                    {{ WRform }}
+                <button class="btn btn-md btn-outline-default m-0 px-3 py-2 z-depth-0 waves-effect" type="submit" value="Submit" name="widereceiver" style="width: 100px;">Submit</button>
+            </form>
+        </div>
+
+        <div class="input-group mb-3" style="margin-top: 20px;">
+            <form action="" method="POST" name="tightend" style="margin-left: auto; margin-right: auto;width: 600px;">
+                <div class="input-group-append" >
+                    {% csrf_token %}
+                            
+                    {{ TEform }}
+                <button class="btn btn-md btn-outline-default m-0 px-3 py-2 z-depth-0 waves-effect" type="submit" value="Submit" name="tightend" style="width: 100px;">Submit</button>
+            </form>
+        </div>
+
+        <div class="input-group mb-3" style="margin-top: 20px;">
+            <form action="" method="POST" name="kicker" style="margin-left: auto; margin-right: auto;width: 600px;">
+                <div class="input-group-append" >
+                    {% csrf_token %}
+                            
+                    {{ Kform }}
+                <button class="btn btn-md btn-outline-default m-0 px-3 py-2 z-depth-0 waves-effect" type="submit" value="Submit" name="kicker" style="width: 100px;">Submit</button>
+            </form>
+        </div>
+
+        <div style="width: 100%; margin-left: auto; margin-right: auto; margin-top: 20px; display: inline;">
+            <div class="btn-group btn-group-lg" role="group" aria-label="Basic example" style="margin-left: auto; margin-right: auto; width: 100%">
+                <button  class="btn btn-primary btn-sm m-0 waves-effect" data-page="page1">QB</button>
+                <button  class="btn btn-primary btn-sm m-0 waves-effect" data-page="page2">RB</button>
+                <button  class="btn btn-primary btn-sm m-0 waves-effect" data-page="page3">WR</button>
+                <button  class="btn btn-primary btn-sm m-0 waves-effect" data-page="page4">TE</button>
+                <button  class="btn btn-primary btn-sm m-0 waves-effect" data-page="page5">K</button>
+            </div>
+        </div>
+
+        
+    
+</div>
+
+    
+
+
+
+
+
+<style>
+    tbody {
+        display: none;
+    }
+</style>
+
+<div class="container" style="width: 100%;">
+              
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Player Name</th>
+          <th></th>
+          <th>Team</th>
+          <th>Position</th>
+          <th>Recent Score</th>
+        </tr>
+      </thead>
+      <tbody id="page1">
+        {% for q in QBpage %}
+        <tr>
+            <td><h6>{{ q.player_name }}</h6></td>
+            <td><button type="button" class="btn btn-success btn-sm m-0 waves-effect" data-player-name="{{ q.player_name }}" data-position="{{ q.position }}">Add</button></td>
+            <td><h6> {{ q.team }} </h6></td>
+            <td><h6> {{ q.position }}  </h6></td>
+            <td><h6>{{ q.points }}</h6></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+
+      <tbody id="page2">
+        {% for r in RBpage %}
+        <tr>
+            <td><h6>{{ r.player_name }}</h6></td>
+            <td><button type="button" class="btn btn-success btn-sm m-0 waves-effect" data-player-name="{{ r.player_name }}" data-position="{{ r.position }}">Add</button></td>
+            <td><h6> {{ r.team }} </h6></td>
+            <td><h6> {{ r.position }}  </h6></td>
+            <td><h6>{{ r.points }}</h6></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+
+      <tbody id="page3">
+        {% for w in WRpage %}
+        <tr>
+            <td><h6>{{ w.player_name }}</h6></td>
+            <td><button type="button" class="btn btn-success btn-sm m-0 waves-effect" data-player-name="{{ w.player_name }}" data-position="{{ w.position }}">Add</button></td>
+            <td><h6> {{ w.team }} </h6></td>
+            <td><h6> {{ w.position }}  </h6></td>
+            <td><h6>{{ w.points }}</h6></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+
+      <tbody id="page4">
+        {% for t in TEpage %}
+        <tr>
+            <td><h6>{{ t.player_name }}</h6></td>
+            <td><button type="button" class="btn btn-success btn-sm m-0 waves-effect" data-player-name="{{ t.player_name }}" data-position="{{ t.position }}">Add</button></td>
+            <td><h6> {{ t.team }} </h6></td>
+            <td><h6> {{ t.position }}  </h6></td>
+            <td><h6>{{ t.points }}</h6></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+
+      <tbody id="page5">
+        {% for k in Kpage %}
+        <tr>
+            <td><h6>{{ k.player_name }}</h6></td>
+            <td><button type="button" class="btn btn-success btn-sm m-0 waves-effect" data-player-name="{{ k.player_name }}" data-position="{{ k.position }}">Add</button></td>
+            <td><h6> {{ k.team }} </h6></td>
+            <td><h6> {{ k.position }}  </h6></td>
+            <td><h6>{{ k.points }}</h6></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+
+
+    </table>
+  </div>
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
