@@ -235,7 +235,7 @@ def playerchoose(request):
                 instance.save()  
       
     
-    url = 'https://api.sportsdata.io/api/nfl/fantasy/json/PlayerGameStatsByWeek/2019/6?key=c3df3464e99245a6a7970f51c008cbee'
+    url = 'https://api.sportsdata.io/api/nfl/fantasy/json/PlayerGameStatsByWeek/2020/6?key=c3df3464e99245a6a7970f51c008cbee'
  
     r = requests.get(url.format()).json()
     
@@ -389,7 +389,7 @@ def teamscores(request, id):
 
     totalscore = 40
 
-    url = 'https://api.sportsdata.io/api/nfl/fantasy/json/PlayerGameStatsByWeek/2019/6?key=c3df3464e99245a6a7970f51c008cbee'
+    url = 'https://api.sportsdata.io/api/nfl/fantasy/json/PlayerGameStatsByWeek/2020/6?key=c3df3464e99245a6a7970f51c008cbee'
 
     r = requests.get(url.format()).json()
 
