@@ -106,8 +106,8 @@
       <tbody id="page1">
         {% for q in QBpage %}
         <tr>
-            <td><h6>{{ q.player_name }}</h6></td>
-            <td><button type="button" class="btn btn-success btn-sm m-0 waves-effect" data-player-name="{{ q.player_name }}" data-position="{{ q.position }}">Add</button></td>
+            <td><h6 class="qbname">{{ q.player_name }}</h6></td>
+            <td><button onclick="selectPlayer(this)" type="button" id="qbackbutton" class="btn btn-success btn-sm m-0 waves-effect" data-player-name="{{ q.player_name }}" data-position="{{ q.position }}">Add</button></td>
             <td><h6> {{ q.team }} </h6></td>
             <td><h6> {{ q.position }}  </h6></td>
             <td><h6>{{ q.points }}</h6></td>
@@ -118,8 +118,8 @@
       <tbody id="page2">
         {% for r in RBpage %}
         <tr>
-            <td><h6>{{ r.player_name }}</h6></td>
-            <td><button type="button" class="btn btn-success btn-sm m-0 waves-effect" data-player-name="{{ r.player_name }}" data-position="{{ r.position }}">Add</button></td>
+            <td><h6 class="rbname">{{ r.player_name }}</h6></td>
+            <td><button onclick="selectRb(this)" type="button" class="btn btn-success btn-sm m-0 waves-effect" data-player-name="{{ r.player_name }}" data-position="{{ r.position }}">Add</button></td>
             <td><h6> {{ r.team }} </h6></td>
             <td><h6> {{ r.position }}  </h6></td>
             <td><h6>{{ r.points }}</h6></td>
@@ -130,8 +130,8 @@
       <tbody id="page3">
         {% for w in WRpage %}
         <tr>
-            <td><h6>{{ w.player_name }}</h6></td>
-            <td><button type="button" class="btn btn-success btn-sm m-0 waves-effect" data-player-name="{{ w.player_name }}" data-position="{{ w.position }}">Add</button></td>
+            <td><h6 class="wrname">{{ w.player_name }}</h6></td>
+            <td><button onclick="selectWr(this)" type="button" class="btn btn-success btn-sm m-0 waves-effect" data-player-name="{{ w.player_name }}" data-position="{{ w.position }}">Add</button></td>
             <td><h6> {{ w.team }} </h6></td>
             <td><h6> {{ w.position }}  </h6></td>
             <td><h6>{{ w.points }}</h6></td>
@@ -142,8 +142,8 @@
       <tbody id="page4">
         {% for t in TEpage %}
         <tr>
-            <td><h6>{{ t.player_name }}</h6></td>
-            <td><button type="button" class="btn btn-success btn-sm m-0 waves-effect" data-player-name="{{ t.player_name }}" data-position="{{ t.position }}">Add</button></td>
+            <td><h6 class="tename">{{ t.player_name }}</h6></td>
+            <td><button onclick="selectTe(this)" type="button" class="btn btn-success btn-sm m-0 waves-effect" data-player-name="{{ t.player_name }}" data-position="{{ t.position }}">Add</button></td>
             <td><h6> {{ t.team }} </h6></td>
             <td><h6> {{ t.position }}  </h6></td>
             <td><h6>{{ t.points }}</h6></td>
@@ -154,8 +154,8 @@
       <tbody id="page5">
         {% for k in Kpage %}
         <tr>
-            <td><h6>{{ k.player_name }}</h6></td>
-            <td><button type="button" class="btn btn-success btn-sm m-0 waves-effect" data-player-name="{{ k.player_name }}" data-position="{{ k.position }}">Add</button></td>
+            <td><h6 class="kname">{{ k.player_name }}</h6></td>
+            <td><button onclick="selectK(this)" type="button" class="btn btn-success btn-sm m-0 waves-effect" data-player-name="{{ k.player_name }}" data-position="{{ k.position }}">Add</button></td>
             <td><h6> {{ k.team }} </h6></td>
             <td><h6> {{ k.position }}  </h6></td>
             <td><h6>{{ k.points }}</h6></td>
