@@ -17,32 +17,25 @@ document
     );
 });
 
-
-function myFunction(txt) {
-    var myTxt = txt;
-    
-    if (txt.includes('QB')) {
-        document.getElementById("QB_name").value = myTxt;
-    }
-
-    else if (txt.includes('RB')) {
-        document.getElementById("RB_name").value = myTxt;
-    }
-
-    else if (txt.includes('WR')) {
-        document.getElementById("WR_name").value = myTxt;
-    }
-
-    else if (txt.includes('TE')) {
-        document.getElementById("TE_name").value = myTxt;
-    }
-
-    else if (txt.includes('K')) {
-        document.getElementById("K_name").value = myTxt;
-    }
-
-    
-    
+function selectPlayer (el){
+    document.getElementById("QB_name").value = el.getAttribute("data-player-name");
 }
+
+function selectRb (el){
+    document.getElementById("RB_name").value = el.getAttribute("data-player-name");
+}
+
+function selectWr (el){
+    document.getElementById("WR_name").value = el.getAttribute("data-player-name");
+}
+
+function selectTe (el){
+    document.getElementById("TE_name").value = el.getAttribute("data-player-name");
+}
+
+function selectK (el){
+    document.getElementById("K_name").value = el.getAttribute("data-player-name");
+}
+
 
 
