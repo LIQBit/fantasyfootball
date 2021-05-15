@@ -1,7 +1,3 @@
-const content = document.getElementById('');
-const addButton = document.getElementsByClassName('btn btn-success btn-sm m-0 waves-effect');
-
-
 
 function handleShowPage(evt) {
 function showPage(page) {
@@ -20,7 +16,6 @@ document
     button.addEventListener('click', handleShowPage)
     );
 });
-
 
 function selectPlayer (el){
     document.getElementById("QB_name").value = el.getAttribute("data-player-name");
@@ -41,11 +36,6 @@ function selectTe (el){
 function selectK (el){
     document.getElementById("K_name").value = el.getAttribute("data-player-name");
 }
-
-
-
-
-
 
 
 

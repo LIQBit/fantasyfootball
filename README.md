@@ -1,42 +1,42 @@
 # Final Project - "Fantasy Football"
 Final Project for CS50w. A very basic fantasy football web application built using django and JavaScript.
 
-##Introduction
+**Introduction**
 
 This is a very basic fantasy-football web application built in Django as a back-end framework with JavaScript for the front-end. The app that users to create an account, select or delete members from their team and compare their scores to other users. Right now, for simplicity, you can only select 5 player positions, but I intend to add more as I develop the app further.
 
 All team and player information is sourced via the ... api. At the moment, the scores and stats available are from week 3 of the 2019 NFL season and are just for demonstration purposes. In the future, I will link the "live" stats. During a regular, live NFL season, scores and statistics are updated at the end of that week's round. A user's overall team score will subsequently update at the end of that round.
 
-##Installation
+**Installation**
 
 *Install project dependencies by running pip install -r requirements.txt. 
 *Make and apply migrations by running python manage.py makemigrations and python manage.py migrate.
 *Create superuser using python manage.py createsuperuser (optional).
 
-##Addons/Necessary extras
+**Addons/Necessary extras**
 
 Bootstrap 4 is used for styling and is available from this link
 https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css
 
 Extra styling is also provided via "MDB" (Material Design for Bootstrap) which also makes use of Google fonts and Font Awesome. Relevant JavaScript and JQuery for these stylesheets and packages are also listed below.
 
-        *Font Awesome
+Font Awesome
             https://use.fontawesome.com/releases/v5.8.2/css/all.css
-        *Google Fonts
+Google Fonts
             https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap
-        *Bootstrap core CSS
+Bootstrap core CSS
             https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css
-        *Material Design Bootstrap
+Material Design Bootstrap
             https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css
 
-        *JS/Jquery
-            https://code.jquery.com/jquery-3.5.1.min.js"></script>
+JS/Jquery
+            https://code.jquery.com/jquery-3.5.1.min.js
             https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js
             https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js
 
 
 
-##Project Structure 
+**Project Structure** 
 
 Start by visiting the url ....game/login. From here, you will be able to click the "Register" link where you will be able to create an account.
 
@@ -46,26 +46,27 @@ To view the scores of all users, visit the "Scoreboard" via the "Scores" link in
 
 This app is mobile responsive.
 
-##File Structure
+**File Structure**
 
-game - main application directory
-    *migrations - current migrations
-    *static/game - contains JavaScript and CSS files
-        *main.js - all JavaScript code
-        *styles.css - contains some css styling
-    *templates/game - contains all html templates for application
-        *createname.html - New users create their team's name here.
-        *editname.html - A logged in user can change their team's name.
-        *form.html -  Logged in users can select players for their team.
-        *layout.html - Base layout template for all html templates in the app.
-        *login.html - Existing users can log in/follow link to register.html.
-        *register.html - New users can register.
-        *scoreboard.html - Displays all users and all scores.
-        *show.html - Displayes a user's current lineup and score.
-    *admin.py - All models in models.py registered here.
-    *apps.py - 'game' application registered here.
-    *models.py - Contains User, player positions and team models.
-    *forms.py - contains forms linked to all object models.
-    *urls.py - Contains all application's urls.
-    *views.py - Contains all application's views.
+- game- main application directory
+    
+ - migrations - current migrations
+ - static/game - contains JavaScript and CSS files
+      - main.js - all JavaScript code
+      - styles.css - contains some css styling
+ - templates/game - contains all html templates for application
+    - createname.html - New users create their team's name here.
+    - editname.html - A logged in user can change their team's name.
+    - form.html -  Logged in users can select players for their team.
+    - layout.html - Base layout template for all html templates in the app.
+    - login.html - Existing users can log in/follow link to register.html.
+    - register.html - New users can register.
+    - scoreboard.html - Displays all users and all scores.
+    - show.html - Displays a user's current lineup and score.
+ - admin.py - All models in models.py registered here.
+ - apps.py - 'game' application registered here.
+ - models.py - Contains User, player positions and team models.
+ - forms.py - contains forms linked to all object models.
+ - urls.py - Contains all application's urls.
+ - views.py - Contains all application's views.
 

@@ -2,7 +2,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
-from django.shortcuts import render, HttpResponseRedirect, redirect
+from django.shortcuts import render, HttpResponseRedirect, get_object_or_404, redirect
 from django.urls import reverse
 from .models import User, Quarterback, Runningback, Widereceiver, Tightend, Kicker, Team
 from .forms import Quarterbackform, Runningbackform, Widereceiverform, Tightendform, Kickerform, Teamform
@@ -238,7 +238,6 @@ def playerchoose(request):
     url = 'https://api.sportsdata.io/api/nfl/fantasy/json/PlayerGameStatsByWeek/2020/6?key=c3df3464e99245a6a7970f51c008cbee'
  
     r = requests.get(url.format()).json()
-   
     
     player_data = []
     
@@ -350,9 +349,6 @@ def playerchoose(request):
                'TEpage': TEpage,
                'Kpage': Kpage          
     }
-
-    
-    
     
     return render(request,'game/form.html', context)
 
