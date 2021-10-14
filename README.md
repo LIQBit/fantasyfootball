@@ -1,3 +1,5 @@
+*Log in notice! If you don't want to create an account to test out the app, you can simply log in as "leigh" and use the password "123"
+
 # Final Project - "Fantasy Football"
 Final Project for CS50w. A very basic fantasy football web application built using django and JavaScript.
 
